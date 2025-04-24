@@ -1,18 +1,18 @@
 #----------
-#AdventureGame/__init__.py
+#AdventureGame/truestart
 #----------
 #Description:
-"""This file is the central file of this adventure game and will merely serve as a central hub to be a high level
-gateway to other files in this package."""
+"""This file is the starting point for the user for this entire project.
+They will be given several options and redirected from here."""
 #----------
 #Created:
-# 4/22/2025
+# 4/23/2025
 #----------
 #Last Modified:
 # 4/23/2025
 #----------
 #Version #:
-#0.1
+#0.0
 #----------
 #Interpreter:
 #Python 3.11
