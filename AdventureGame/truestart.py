@@ -1,5 +1,5 @@
 #----------
-#AdventureGame/truestart
+#AdventureGame/truestart.py
 #----------
 #Description:
 """This file is the starting point for the user for this entire project.
@@ -9,27 +9,40 @@ They will be given several options and redirected from here."""
 # 4/23/2025
 #----------
 #Last Modified:
-# 4/23/2025
+# 4/24/2025
 #----------
 #Version #:
-#0.0
+#0.1
 #----------
 #Interpreter:
 #Python 3.11
 #----------
 #Imports
-
+import universallyhelpfulthings
+import WalmartJobPath.googleitWalmart
 #----------
 #Universal Variables used throughout the game
-#They're declared after imports to ensure that the declaration of those variables in the custom modules for testing doesn't override these
-user_score = 0#The user starts with 0 points in the scoring system
 
-def main():
-    """This function pushes the user to the start page and deals with any exceptions that aren't covered
-    by the rest of the program."""
-    global user_score#Required to make it redefinable for the functions to be called.
-    pass
+
+def main(user_score, os_type):
+    """This function gives the user an introduction to the game and gives them options they can take. It will be one of the major crossroads of the game. User score
+    is required to calculate the final score and to push to called functions beyond. os_type is similar but needed for imports.
+    *An extra backdoor is inbuilt to show a secret area."""
+
+    print("""Start of Adventure: The True American Apple Pie
+    
+You have decided to embark on a dangerous quest to get a coveted True American Apple Pie.
+You have several paths you can take on this perilous journey.\n""")
+
+    choices = ["Google It", "Find an Existing Pie", "Leave The Game(W/ Credits and Dev. Info)"]
+
+    user_chosen = universallyhelpfulthings.multiple_choice_input_collection(choices)
+    if user_chosen == "Google It":
+        WalmartJobPath.googleitWalmart.main(user_score, os_type)
+    elif user_chosen == "Leave The Game(W/ Credits and Dev. Info)":
+        print("Leafing")
+        print(user_score+100)
 
 #For testing purposes, if this file is being run on its own, automatically run main()
 if __name__ == "__main__":
-    main()
+    main(0, "dt")
