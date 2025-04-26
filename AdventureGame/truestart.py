@@ -9,22 +9,22 @@ They will be given several options and redirected from here."""
 # 4/23/2025
 #----------
 #Last Modified:
-# 4/24/2025
+# 4/25/2025
 #----------
 #Version #:
-#0.1
+#0.2
 #----------
 #Interpreter:
 #Python 3.11
 #----------
 #Imports
-import universallyhelpfulthings
-import WalmartJobPath.googleitWalmart
+import AdventureGame.universallyhelpfulthings
+import AdventureGame.WalmartJobPath.googleitWalmart
 #----------
-#Universal Variables used throughout the game
 
 
-def main(user_score, os_type):
+
+def main(user_score):
     """This function gives the user an introduction to the game and gives them options they can take. It will be one of the major crossroads of the game. User score
     is required to calculate the final score and to push to called functions beyond. os_type is similar but needed for imports.
     *An extra backdoor is inbuilt to show a secret area."""
@@ -38,11 +38,10 @@ You have several paths you can take on this perilous journey.\n""")
 
     user_chosen = universallyhelpfulthings.multiple_choice_input_collection(choices)
     if user_chosen == "Google It":
-        WalmartJobPath.googleitWalmart.main(user_score, os_type)
-    elif user_chosen == "Leave The Game(W/ Credits and Dev. Info)":
-        print("Leafing")
-        print(user_score+100)
+        AdventureGame.WalmartJobPath.googleitWalmart.main(user_score)
+    elif user_chosen == "Leave The Game(Skip to Credits and Dev. Info)":
+        print("Leaving...")
 
 #For testing purposes, if this file is being run on its own, automatically run main()
 if __name__ == "__main__":
-    main(0, "dt")
+    main()
