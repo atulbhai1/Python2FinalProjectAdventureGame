@@ -19,19 +19,16 @@ gateway to other files in this package."""
 #----------
 #Imports
 import AdventureGame.truestart#Will be called
+import AdventureGame.universallyhelpfulthings#For user_score
 #----------
-#Universal Variables used throughout the game
-#They're declared after imports to ensure that the declaration of those variables in the custom modules for testing doesn't override these
-user_score = 0#The user starts with 0 points in the scoring system
-
+AdventureGame.universallyhelpfulthings.user_score_redefinition(0)#Reset the user's score to 0
 
 def main():
 
     """This function pushes the user to the start page and deals with any exceptions that aren't covered
     by the rest of the program."""
-    global user_score#Required to make it redefinable for the functions to be called.
     try:
-        truestart.main(user_score)
+        truestart.main()
     except BaseException as e:
         print("Sadly an unknown error occurred!!!")
         print("Error details:")
