@@ -8,17 +8,18 @@
 # 4/24/2025
 # ----------
 # Last Modified:
-# 4/26/2025
+# 4/27/2025
 # ----------
 # Version #:
-# 0.2
+# 0.3
 # ----------
 # Interpreter:
 # Python 3.11
 # ----------
 # Imports
 import AdventureGame.universallyhelpfulthings
-
+import AdventureGame.WalmartJobPath.WalmartGame as GAME#Use import ... as ... to simplify this and to meet what might be another requirement!
+import AdventureGame.WalmartJobPath.WalmartWinner as WINNER#Use import ... as ... to simplify this and to meet what might be another requirement!
 
 def main():
     """This function gives the user the start of a part of a story with choices and different paths. It is the Walmart part of the game.
@@ -37,8 +38,7 @@ def main():
     path_options = ["“No! No! I just wanted some pie!”", "“Not like that, I just want to be able to upgrade to the Whole Foods Bathrooms, I heard they’re nicer.”"]
 
     #This following line asks the user what path they want and if they want the first path, it prints out the result.
-    if AdventureGame.universallyhelpfulthings.multiple_choice_input_collection(
-            path_options) == "“No! No! I just wanted some pie!”":
+    if AdventureGame.universallyhelpfulthings.multiple_choice_input_collection(path_options) == "“No! No! I just wanted some pie!”":
         print("“Oh, ok! I have one tip for ya, never trust people named Bob, those are horrible, horrible people who will lie, steal, pilfer, and do everything in their power to ruin this world!”")
         AdventureGame.universallyhelpfulthings.change_user_score_by(100)  # Reward the user for appeasing the other person and learning valuable information.
     else:  # If they picked the other path, it prints out a different thing.
@@ -59,8 +59,14 @@ def main():
     AdventureGame.universallyhelpfulthings.next_input("Start Working")
 
     #Redirect to the game file for this game
+    user_game_result = GAME.main()
+
+    if user_game_result:#If they won:
+        WINNER.main()#Run the winner sequence
+    else:#If they lost
+        pass#Run the losing sequence
 
 
 # For testing purposes, if this file is being run on its own, automatically run main()
 if __name__ == "__main__":
-    main(0)
+    main()

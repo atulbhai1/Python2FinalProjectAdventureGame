@@ -8,10 +8,10 @@
 # 4/23/2025
 #----------
 #Last Modified:
-# 4/26/2025
+# 4/27/2025
 #----------
 #Version #:
-#0.2
+#0.3
 #----------
 #Interpreter:
 #Python 3.11
@@ -28,8 +28,13 @@ user_score_file_name = "user_score.txt"
 #The below custom exception is to ensure that the input collection functions can identify when the problem is just an improper input and not another type of problem.
 class ImproperInputException(BaseException):
     def __init__(self, message):
-        self.message = message
-        super().__init__(self.message)
+        self.__message = message#self.__message means that message is a "hidden" object attribute, another thing that might be a requirement
+        super().__init__(self.__message)
+
+    def get_message(self):
+        """This method just returns the value of the hidden object attribute of self.__message."""
+        return self.__message
+
 
 #Note: The above custom exception makes it so that I have both used Exceptions and Classes! YES!!!!!!
 
@@ -57,7 +62,7 @@ def multiple_choice_input_collection(options:list):
             print("Please enter an integer value for your answer choice.")
             continue#Loop again
         except ImproperInputException as e:#If the number was too high/low, print the error message
-            print(e)
+            print(e.get_message())#Use the method to get the error message
             continue#Loop again
         else:
             break#Stop looping inputs. VALID INPUT!!!
