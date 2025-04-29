@@ -39,9 +39,12 @@ You have several paths you can take on this perilous journey.\n""")
 
     user_chosen = universallyhelpfulthings.multiple_choice_input_collection(choices)
     if user_chosen == "Google It":
-        AdventureGame.WalmartJobPath.googleitWalmart.main()
+        AdventureGame.WalmartJobPath.googleitWalmart.main()#Go to the Walmart part of the game
     elif user_chosen == "Leave The Game(Skip to Credits and Dev. Info)":
         print("Leaving...")
+
+    AdventureGame.credits.main()#Show credits
+
 
 #For testing purposes, if this file is being run on its own, automatically run main()
 if __name__ == "__main__":
