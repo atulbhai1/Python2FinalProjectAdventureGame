@@ -39,7 +39,7 @@ def main():
         print("\nNow that you have waited for the entirety of your unimaginably long prison sentence, you are a free man once more!")
         #AdventureGame.restart.main()
     else:
-        escape()
+        escape()#Run the escape game!
 
 
 def escape():
