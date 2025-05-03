@@ -21,6 +21,7 @@ They will be given several options and redirected from here."""
 import AdventureGame.universallyhelpfulthings
 import AdventureGame.WalmartJobPath.googleitWalmart
 import AdventureGame.credits
+import AdventureGame.MurderMysteryPath.findanexistingpieMurder
 #----------
 
 
@@ -40,6 +41,8 @@ You have several paths you can take on this perilous journey.\n""")
     user_chosen = universallyhelpfulthings.multiple_choice_input_collection(choices)
     if user_chosen == "Google It":
         AdventureGame.WalmartJobPath.googleitWalmart.main()#Go to the Walmart part of the game
+    elif user_chosen == "Find an Existing Pie":
+        AdventureGame.MurderMysteryPath.findanexistingpieMurder.main()#Go to the murder mystery part of the game
     elif user_chosen == "Leave The Game(Skip to Credits and Dev. Info)":
         print("Leaving...")
 

@@ -1,3 +1,1 @@
-import os
-if str(os.getcwd())[-len("Python2FinalProjectAdventureGame"):] != "Python2FinalProjectAdventureGame":
-    print("Uh oh")
+print(type(eval("1+1")))

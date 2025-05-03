@@ -8,10 +8,10 @@
 # 4/23/2025
 #----------
 #Last Modified:
-# 4/27/2025
+# 5/2/2025
 #----------
 #Version #:
-#0.3
+#0.4
 #----------
 #Interpreter:
 #Python 3.11
@@ -71,6 +71,20 @@ def multiple_choice_input_collection(options:list):
     result = options[user_input-1]
 
     return result
+
+def specific_type_input_collection(desired_input_type=int):
+    """This function collects input of a specific type. It gets normal input, cleans it, and tries to run it through a type filter. If it fails, it asks the user to enter a new value."""
+
+    while True:#While a valid input has not been inputted yet
+        try:#Try to do these things
+            user_entry = input().strip()#Get user input and clean it a bit
+            desired_input_type(user_entry)#Make the user input the desired type
+        except ValueError:#If it couldn't make the user input the desired type
+            print("Please provide a valid input that meets the prompt and can be turned into type", desired_input_type)
+        else:#If no error occurred
+            break#Leave the input loop!
+
+    return user_entry#Send back the valid user input!
 
 def next_input(prompt="Next"):
     """This is a simple function that helps us clarify and recognize all the times the user has to press enter to continue reading in code outside of this."""

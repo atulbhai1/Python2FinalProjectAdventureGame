@@ -46,6 +46,7 @@ def main():
         print("The store security officer chases you with a gun and threatens to shoot. With his gun on your back, he calls the police and they take you away. GO TO JAIL!!!")
         AdventureGame.jail.main()#Go to jail!
 
+
 # For testing purposes, if this file is being run on its own, automatically run main()
 if __name__ == "__main__":
     main()
