@@ -19,6 +19,7 @@
 # Imports
 import AdventureGame.universallyhelpfulthings
 import AdventureGame.jail
+import AdventureGame.restart
 
 
 def main():
@@ -35,8 +36,8 @@ def main():
     user_path = AdventureGame.universallyhelpfulthings.multiple_choice_input_collection(["Rob the ingredients", "Give up on this for now"])#Let the user give up or rob ingredients
 
     if user_path == "Give up on this for now":#If the user gave up
-        # AdventureGame.restart.main()
-        pass
+        AdventureGame.restart.main()#Make them restart
+
     else:#If they chose to rob the ingredients
 
         print("You sneak away to the bakery section, take the ingredients, and hide them under your shirt. As you try to leave the store…")

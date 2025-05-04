@@ -8,10 +8,10 @@
 # 4/28/2025
 #----------
 #Last Modified:
-# 4/29/2025
+# 5/3/2025
 #----------
 #Version #:
-#0.1
+#0.2
 #----------
 #Interpreter:
 #Python 3.11
@@ -20,6 +20,7 @@
 import AdventureGame.universallyhelpfulthings
 import AdventureGame.theend
 from datetime import datetime, timedelta
+import AdventureGame.restart
 #----------
 
 def main():
@@ -49,7 +50,7 @@ def escape():
     #Inform the user about the game and how to play
     print("\nYou have decided to escape. Thus, you examine at the guard patterns and see where you have to go and when you have to go in order to escape. You even calculate how many footsteps it takes to escape when they take you outdoors: 30. But on the day you plan on escaping, they tighten security due to a terrorist attack and put blindfolds on you! Now you have to walk exactly 30 steps in the 30 seconds you have between guard changes in order to escape! If you’re off by even 1 step, you won’t be able to find the door in time and will get caught!")
 
-    print("\nIn order to play this game, you need to press enter 30 times and enter an input of \"n\" and enter that in order to confirm that you are done.")
+    print("\nIn order to play this game, you need to press enter exactly 30 times and enter an input of \"n\" and enter that in order to confirm that you are done. Do all of this within 30 seconds to escape.")
 
     input("\nRead over the above instructions carefully. When you are ready, press enter to start")#Give them time to read before starting the game
 
@@ -77,11 +78,11 @@ def escape():
 
         if time_difference.seconds <= 30:#If they took 30 seconds or less
             print("You escaped!!!")#They escaped!
-            # AdventureGame.restart.main()
-
-    else:
-        print("You stop a bit too late or with not enough or too many steps. Regardless, they shoot you dead then and there.")
-        AdventureGame.theend.death()#Do the death sequence
+            AdventureGame.restart.main()#Make them restart
+            return None#Keep them from going onwards to death
+    #If they lost
+    print("You stop a bit too late or with not enough or too many steps. Regardless, they shoot you dead then and there.")
+    AdventureGame.theend.death()#Do the death sequence
 
 
 

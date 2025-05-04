@@ -2,17 +2,16 @@
 #AdventureGame/__init__.py
 #----------
 #Description:
-"""This file is the central file of this adventure game and will merely serve as a central hub to be a high level
-gateway to other files in this package."""
+"""This file is the starting file of this adventure game and will merely serve as a starting point that configures one thing, handles exceptions, and redirects to the true start."""
 #----------
 #Created:
 # 4/22/2025
 #----------
 #Last Modified:
-# 4/25/2025
+# 5/3/2025
 #----------
 #Version #:
-#0.3
+#0.4
 #----------
 #Interpreter:
 #Python 3.11
@@ -28,7 +27,7 @@ def main():
     """This function pushes the user to the start page and deals with any exceptions that aren't covered
     by the rest of the program."""
     try:
-        truestart.main()
+        AdventureGame.truestart.main()
     except BaseException as e:
         print("Sadly an unknown error occurred!!!")
         print("Error details:")

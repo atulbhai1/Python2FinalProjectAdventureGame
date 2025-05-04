@@ -39,7 +39,7 @@ def main():
 
     used_game_people = GamePeople[1:]#Cut out the column names
 
-    used_game_people = random.sample(used_game_people, 10)#Randomly pick 10 entries from used_game_people
+    used_game_people = random.sample(used_game_people, k=10)#Randomly pick 10 entries from used_game_people
 
     #Let's pick a sorting algorithm by asking the user!
     print("Before we start the game, you need to help Atul! He needs to use both filter and map but can only use one at a time! Just reply with what is desired below:")

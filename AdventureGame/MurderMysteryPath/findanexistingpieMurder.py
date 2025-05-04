@@ -1,5 +1,5 @@
 # ----------
-# AdventureGame/MurderMysteryPath/findanexistingpieMurder.py
+# AdventureGame/MurderMysteryPath/askforhelpPiPies.py
 # ----------
 # Description:
 """This file is the main file for the Murder Mystery pathway which the user can take by choosing to Find an Existing Pie."""
@@ -23,6 +23,7 @@ from datetime import datetime, timedelta
 import AdventureGame.theend
 import random
 import AdventureGame.jail
+import AdventureGame.restart
 
 def main():
     """This function gives the user the start of a part of a story with choices and different paths. It is the Murder Mystery part of the game.
@@ -115,7 +116,7 @@ def jump_game():
 def follow_someone_else():
     """This is what happens when they choose to follow someone else. It's just a straight line of print statements and next requests until it's forwarded to bush()."""
 
-    print("You instead decide to follow the store manager because you overheard him saying that he was going to get a great American Apple Pie.")
+    print("You decide to follow the store manager instead because you overheard him saying that he was going to get a great American Apple Pie.")
 
     AdventureGame.universallyhelpfulthings.next_input()#Make sure that they're ready to continue
 
@@ -160,8 +161,8 @@ def bush():
             user_path_leaving = AdventureGame.universallyhelpfulthings.multiple_choice_input_collection(["Take a different route", "Search again"])
 
             if user_path_leaving == "Take a different route":#If they decided to leave this part of the game
-                # AdventureGame.restart.main()
-                pass
+                AdventureGame.restart.main()#Send them to restart
+
             else:#If they decided to just follow the other person
                 follow_someone_else()#Redirect them to follow_someone_else()
 
@@ -263,7 +264,7 @@ def mousetraps_game():
 
         AdventureGame.universallyhelpfulthings.next_input()  # Make sure that they are ready to continue
 
-        print("You get a foot trapped in a mousetrap and it hurts horribly. As much as you try to escape , each movement just sets off another trap on another part of your body. The door opens and you see a person approaching.")
+        print("You get a foot trapped in a mousetrap and it hurts horribly. As much as you try to escape, each movement just sets off another trap on another part of your body. The door opens and you see a person approaching.")
 
         AdventureGame.universallyhelpfulthings.next_input()  # Make sure that they are ready to continue
 
@@ -385,4 +386,4 @@ def killer_talks_with_minigame():
 if __name__ == "__main__":
     main()
 
-#NOTE: There is only one file in this folder bemcause of just how interconnected this path is and
+#NOTE: There is only one file in this folder because of just how interconnected this path is and how small each of the sections are.

@@ -1,18 +1,19 @@
 #----------
-#AdventureGame/truestart.py
+#AdventureGame/restart.py
 #----------
 #Description:
-"""This file is the starting point for the user for this entire project.
-They will be given several options and redirected from here."""
+"""This file is the restarting point for the user for this entire project.
+They will be given several options and redirected from here.
+This file is forwarded to many times"""
 #----------
 #Created:
-# 4/23/2025
+# 5/3/2025
 #----------
 #Last Modified:
 # 5/3/2025
 #----------
 #Version #:
-#0.5
+#0.0
 #----------
 #Interpreter:
 #Python 3.11
@@ -20,7 +21,7 @@ They will be given several options and redirected from here."""
 #Imports
 import AdventureGame.universallyhelpfulthings
 import AdventureGame.WalmartJobPath.googleitWalmart
-import AdventureGame.credits
+import AdventureGame.theend
 import AdventureGame.MurderMysteryPath.findanexistingpieMurder
 import AdventureGame.LandOfPiPiesPath.askforhelpPiPies
 #----------
@@ -28,17 +29,14 @@ import AdventureGame.LandOfPiPiesPath.askforhelpPiPies
 
 
 def main():
-    """This function gives the user an introduction to the game and gives them options they can take. It will be one of the major crossroads of the game.
+    """This function gives the user a reminder to the game's purpose and gives them options they can take. It will be one of the major crossroads of the game.
     *An extra backdoor is inbuilt to show a secret area."""
 
-    print("""Start of Adventure: The True American Apple Pie
-    
-You have decided to embark on a dangerous quest to get a coveted True American Apple Pie.
-You have several paths you can take on this perilous journey.\n""")
+    print("You’re back where you started: you still want a True American Apple Pie. Which path will you take?\n")
 
-    choices = ["Google It", "Find an Existing Pie", "Ask for help","Leave The Game(Skip to Credits and Dev. Info)"]
+    choices = ["Google It", "Find an Existing Pie", "Ask for help","Leave The Game(Skip to End From Here)"]
 
-    user_chosen = AdventureGame.universallyhelpfulthings.multiple_choice_input_collection(choices)#Get their path choice
+    user_chosen = universallyhelpfulthings.multiple_choice_input_collection(choices)#Get their path choice
 
     #Redirect them based off their choice
     if user_chosen == "Google It":
@@ -47,10 +45,10 @@ You have several paths you can take on this perilous journey.\n""")
         AdventureGame.MurderMysteryPath.findanexistingpieMurder.main()#Go to the murder mystery part of the game
     elif user_chosen == "Ask for help":
         AdventureGame.LandOfPiPiesPath.askforhelpPiPies.main()
-    elif user_chosen == "Leave The Game(Skip to Credits and Dev. Info)":
+    elif user_chosen == "Leave The Game(Skip to End From Here)":
         print("Leaving...")
 
-        AdventureGame.credits.main()#Show credits
+        AdventureGame.theend.main("You skipped here")
 
         if input("(Press Enter To End)") == "SECRETBACKDOOR!!!":
             print("Welcome to this secret area. This is a nice area. Here is a plant I made.")
