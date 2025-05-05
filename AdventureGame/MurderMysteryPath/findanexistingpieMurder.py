@@ -9,10 +9,10 @@
 # 4/29/2025
 # ----------
 # Last Modified:
-# 5/2/2025
+# 5/5/2025
 # ----------
 # Version #:
-# 0.2
+# 0.3
 # ----------
 # Interpreter:
 # Python 3.11
@@ -211,7 +211,7 @@ def mousetraps_game():
 
     start_time = datetime.now()#Save the start time
 
-    user_gameplay = input("Enter those letters!(Press Enter again to end!")#Let them play and save their response
+    user_gameplay = input("Enter those letters!(Press Enter again to end!)")#Let them play and save their response
 
     end_time = datetime.now()#Save the end time
 

@@ -8,16 +8,17 @@
 # 4/23/2025
 #----------
 #Last Modified:
-# 5/2/2025
+# 5/5/2025
 #----------
 #Version #:
-#0.4
+#0.5
 #----------
 #Interpreter:
 #Python 3.11
 #----------
 #Imports
-import os#For accessing files when unsure of file using this module and of the OS this will be run on
+import os#For accessing files when unsure of working directory using this module and of the OS this will be run on
+import pathlib#For accessing files when unsure of the os and working directory
 
 
 #----------
@@ -92,10 +93,15 @@ def next_input(prompt="Next"):
     input()
 
 def user_score_retrieval():
-    """This function opens the user_score.txt file, gets the contents, closes the file, and returns the contents as an integer."""
-    # If the current directory isn't AdventureGame, move it back to the parent directory which should be AdventureGame
-    if str(os.getcwd())[-len("AdventureGame"):] != "AdventureGame":
+    """This function opens the user_score.txt file, gets the contents, closes the file, and returns the contents as an integer. A directory change section is included just in case."""
+
+    # If the current directory isn't AdventureGame and isn't Python2FinalProjectAdventureGame, move it back to the parent directory which should be AdventureGame regardless of OS
+    if str(os.getcwd())[-len("AdventureGame"):] != "AdventureGame" and str(os.getcwd())[
+                                                                       -len("Python2FinalProjectAdventureGame"):] != "Python2FinalProjectAdventureGame":
         os.chdir("..")
+    # If it is running from Python2FinalProjectAdventureGame, not anything else, push it to AdventureGame. Paths are joined using pathlib for a non-os specific result
+    elif str(os.getcwd())[-len("Python2FinalProjectAdventureGame"):] == "Python2FinalProjectAdventureGame":
+        os.chdir(str(pathlib.Path(os.getcwd()).joinpath("AdventureGame")))
 
     with open(user_score_file_name, "r") as user_score_file:
         user_score = int(user_score_file.read())
@@ -104,11 +110,15 @@ def user_score_retrieval():
     return user_score
 
 def user_score_redefinition(new_score=0):
-    """This function opens user_score.txt, replaces what's indside, and closes it."""
+    """This function opens user_score.txt, replaces what's inside, and closes it.  A directory change section is included just in case."""
 
-    # If the current directory isn't AdventureGame, move it back to the parent directory which should be AdventureGame
-    if str(os.getcwd())[-len("AdventureGame"):] != "AdventureGame":
+    # If the current directory isn't AdventureGame and isn't Python2FinalProjectAdventureGame, move it back to the parent directory which should be AdventureGame regardless of OS
+    if str(os.getcwd())[-len("AdventureGame"):] != "AdventureGame" and str(os.getcwd())[-len("Python2FinalProjectAdventureGame"):] != "Python2FinalProjectAdventureGame":
         os.chdir("..")
+    #If it is running from Python2FinalProjectAdventureGame, not anything else, push it to AdventureGame. Paths are joined using pathlib for a non-os specific result
+    elif str(os.getcwd())[-len("Python2FinalProjectAdventureGame"):] == "Python2FinalProjectAdventureGame":
+        os.chdir(str(pathlib.Path(os.getcwd()).joinpath("AdventureGame")))
+
     with open(user_score_file_name, "w") as user_score_file:
         user_score_file.write(str(new_score))
         user_score_file.close()
