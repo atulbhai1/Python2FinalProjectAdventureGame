@@ -21,6 +21,7 @@ import AdventureGame.truestart#Will be called
 import AdventureGame.universallyhelpfulthings#For user_score
 #----------
 AdventureGame.universallyhelpfulthings.user_score_redefinition(0)#Reset the user's score to 0
+#Also, this changes the working directory to AdventureGame, which is nice & needed to access files later on
 
 def main():
 

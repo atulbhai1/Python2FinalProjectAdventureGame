@@ -8,10 +8,10 @@
 # 4/24/2025
 # ----------
 # Last Modified:
-# 4/27/2025
+# 5/6/2025
 # ----------
 # Version #:
-# 0.3
+# 0.4
 # ----------
 # Interpreter:
 # Python 3.11
@@ -20,6 +20,7 @@
 import AdventureGame.universallyhelpfulthings
 import AdventureGame.WalmartJobPath.WalmartGame as GAME#Use import ... as ... to simplify this and to meet what might be another requirement!
 import AdventureGame.WalmartJobPath.WalmartWinner as WINNER#Use import ... as ... to simplify this and to meet what might be another requirement!
+import AdventureGame.WalmartJobPath.WalmartLoser as LOSER#Use import ... as ... to simplify this and to meet what might be another requirement!
 
 def main():
     """This function gives the user the start of a part of a story with choices and different paths. It is the Walmart part of the game.
@@ -64,7 +65,7 @@ def main():
     if user_game_result:#If they won:
         WINNER.main()#Run the winner sequence
     else:#If they lost
-        pass#Run the losing sequence
+        LOSER.main()#Run the losing sequence
 
 
 # For testing purposes, if this file is being run on its own, automatically run main()
