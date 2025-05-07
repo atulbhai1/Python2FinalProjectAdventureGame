@@ -9,10 +9,10 @@
 # 4/29/2025
 # ----------
 # Last Modified:
-# 5/5/2025
+# 5/7/2025
 # ----------
 # Version #:
-# 0.3
+# 0.4
 # ----------
 # Interpreter:
 # Python 3.11
@@ -227,6 +227,10 @@ def mousetraps_game():
 
     if len(user_gameplay) < 60:#If they didn't enter at least 60 letters, they couldn't have done 30 of each!
         user_won = False#So they lost!
+
+    elif len(set(user_gameplay)) != 2:#If they met the length requirement, check if there are not exactly 2 input values from the user(There should only be "r" and "l" or 2)
+            user_won = False#So they lost! Inputs other than "r" and "l" are not allowed!
+
 
     for index, item in enumerate(user_gameplay):#Break user gameplay up as an iterable and for each item and the corresponding index, run the below
         if index % 2 == 0:#If the index is even, so indexes 0, 2, 4, etc... and thus all the "r"'s

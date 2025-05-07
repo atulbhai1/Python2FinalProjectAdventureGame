@@ -37,3 +37,18 @@ def main():
 #For testing purposes, if this file is being run on its own, automatically run main()
 if __name__ == "__main__":
     main()
+
+#Extra Note Section
+
+#There are a few characters
+#The store manager is an evil, murdering, sociopath.
+#Anyone named Bob is inherently bad.
+#The person in the stall over is good
+#Aliens are good
+#The Great Pi of Pie is a strict but benevolent and generous ruler
+
+#I used as many things as I could in Python.
+#My class is in universally helpful things and is the custom exception for invalid inputs
+#I used a method of that class for the error message
+
+#My storyline gets broken up based on user input but works towards a universal goal

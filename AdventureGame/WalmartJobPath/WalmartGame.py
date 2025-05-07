@@ -80,7 +80,7 @@ def main():
         if False in user_results:#If there was a single wrong answer
             user_won = False#User does not win!
     else:#They wanted to use filter
-        user_results = list(filter(lambda x:filtering_fonc(x, used_game_people), person_choice))#Use filter to only select the user choices that are right(hopefully all 10). Lambda was also incorporated just because
+        user_results = list(filter(lambda x:filtering_fonc(x, used_game_people), person_choice))#Use filter to only select the user choices that are right(hopefully all 10). Lambda was also incorporated to push the dictionary of game people
 
         if len(user_results) < 10:#If not all 10 were correct
             user_won = False
