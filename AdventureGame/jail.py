@@ -8,10 +8,10 @@
 # 4/28/2025
 #----------
 #Last Modified:
-# 5/3/2025
+# 5/14/2025
 #----------
 #Version #:
-#0.2
+#0.3
 #----------
 #Interpreter:
 #Python 3.11
@@ -21,6 +21,7 @@ import AdventureGame.universallyhelpfulthings
 import AdventureGame.theend
 from datetime import datetime, timedelta
 import AdventureGame.restart
+import time
 #----------
 
 def main():
@@ -38,7 +39,7 @@ def main():
         print("Waiting...")
         time.sleep(30)#Wait 30 seconds
         print("\nNow that you have waited for the entirety of your unimaginably long prison sentence, you are a free man once more!")
-        #AdventureGame.restart.main()
+        AdventureGame.restart.main()
     else:
         escape()#Run the escape game!
 

@@ -43,7 +43,7 @@ def main(message):
             user_ranking = ranking#The user has this ranking
             break#Leave this loop! No more comparisons required
 
-    print("That means that you are a", user_ranking)#Tell the user what ranking they are.
+    print("That means that you are a(n)", user_ranking)#Tell the user what ranking they are.
 
     print("\nThank you for playing, hope you play again!")
 

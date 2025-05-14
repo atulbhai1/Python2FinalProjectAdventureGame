@@ -36,7 +36,7 @@ def main():
 
     choices = ["Google It", "Find an Existing Pie", "Ask for help","Leave The Game(Skip to End From Here)"]
 
-    user_chosen = universallyhelpfulthings.multiple_choice_input_collection(choices)#Get their path choice
+    user_chosen = AdventureGame.universallyhelpfulthings.multiple_choice_input_collection(choices)#Get their path choice
 
     #Redirect them based off their choice
     if user_chosen == "Google It":

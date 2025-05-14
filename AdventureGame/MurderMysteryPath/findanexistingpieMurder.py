@@ -124,7 +124,7 @@ def follow_someone_else():
 
     AdventureGame.universallyhelpfulthings.next_input()#Make sure that they're ready to continue
 
-    print("You feel the car stop and Bob get out. When you think you’re safe, you quickly get out and hide behind a bush. While hiding, you see Bob return to the car and take all the things from the trunk.")
+    print("You feel the car stop and Bob get out. When you think you’re safe, you quickly get out and hide behind a bush. While hiding, you see Bob return to the car and take out everything from the trunk.")
 
     AdventureGame.universallyhelpfulthings.next_input()#Make sure that they're ready to continue
 
@@ -163,8 +163,8 @@ def bush():
             if user_path_leaving == "Take a different route":#If they decided to leave this part of the game
                 AdventureGame.restart.main()#Send them to restart
 
-            else:#If they decided to just follow the other person
-                follow_someone_else()#Redirect them to follow_someone_else()
+            else:#If they decided to search again
+                main()#Redirect them to main() to go through this again
 
     else:#If they decided to go to the back of the house
         back_of_the_house()#Send them to the back of the house function
@@ -362,7 +362,7 @@ def math_game():
 def killer_talks_with_minigame():
     """This runs one piece of dialogue, asks the user a question, and redirects them based off their answer to that question."""
 
-    print("He talks to you: “Hello you sly, thief! You’re trying to profit off of my murder!!! How dare you!!! I’ll give you one chance to escape with your life. If you can guess my name, I’ll just frame you for the murder, take my pie, and leave you here. If you can’t though, I won’t think twice before killing you.”")
+    print("He talks to you: “Hello you sly thief! You’re trying to profit off of my murder!!! How dare you!!! I’ll give you one chance to escape with your life. If you can guess my name, I’ll just frame you for the murder, take my pie, and leave you here. If you can’t though, I won’t think twice before killing you.”")
 
     user_input = input("Guess his name!").strip().lower()#Ask the user to solve the dillema!
 

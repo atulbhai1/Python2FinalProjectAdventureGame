@@ -8,10 +8,10 @@
 # 4/23/2025
 #----------
 #Last Modified:
-# 5/5/2025
+# 5/14/2025
 #----------
 #Version #:
-#0.5
+#0.6
 #----------
 #Interpreter:
 #Python 3.11
@@ -79,7 +79,7 @@ def specific_type_input_collection(desired_input_type=int):
     while True:#While a valid input has not been inputted yet
         try:#Try to do these things
             user_entry = input().strip()#Get user input and clean it a bit
-            desired_input_type(user_entry)#Make the user input the desired type
+            user_entry = desired_input_type(user_entry)#Make the user input the desired type
         except ValueError:#If it couldn't make the user input the desired type
             print("Please provide a valid input that meets the prompt and can be turned into type", desired_input_type)
         else:#If no error occurred
