@@ -58,9 +58,9 @@ def multiple_choice_input_collection(options:list):
             user_input = int(user_input)
             if user_input > len(options) or user_input < 1:#Must enter a number between 1 and the total number of options.
                 #If condiction not met, make a custom error message and raise the custom error
-                raise ImproperInputException("Please enter a number between 1 and {0}".format(len(options)))
+                raise ImproperInputException("Please enter a whole number between(inclusive) 1 and {0} based on your desired choice from the above options.".format(len(options)))
         except ValueError:#If the number was not an integer
-            print("Please enter an integer value for your answer choice.")
+            print("Please enter an integer value for your desired choice from the above options.")
             continue#Loop again
         except ImproperInputException as e:#If the number was too high/low, print the error message
             print(e.get_message())#Use the method to get the error message

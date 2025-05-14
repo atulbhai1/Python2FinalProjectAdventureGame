@@ -49,7 +49,7 @@ def main():
     for question in questions[1:]:
         usable_questions.append({"Question":question[0], "Correct Answer":question[1], "ALL Possible Answers":question[1:]})
 
-    used_questions = random.choices(usable_questions, k=5)#Pick 5 random questions to show
+    used_questions = random.sample(usable_questions, k=5)#Pick 5 random questions to show
 
     #Now we're ready to begin!
 
@@ -74,7 +74,7 @@ def main():
         AdventureGame.universallyhelpfulthings.change_user_score_by(2500)#For having won a great victory and having secured a lifetime of pie, give them points
         AdventureGame.universallyhelpfulthings.next_input()  # make sure that they are ready to continue
 
-        print("The great Pi Pie speaks, “You have done wonderful. I am impressed. I shall arrange for a great award for your triumph.”")
+        print("The great Pi Pie speaks, “You have done wonderfully. I am impressed. I shall arrange for a great award for your triumph.”")
 
         AdventureGame.universallyhelpfulthings.next_input()  # make sure that they are ready to continue
 
