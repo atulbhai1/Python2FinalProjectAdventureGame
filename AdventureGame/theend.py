@@ -18,6 +18,7 @@
 #----------
 #Imports
 import AdventureGame.universallyhelpfulthings
+import AdventureGame.credits
 #----------
 
 #Save the rankings and the attached conditions(lambda) as a dictionary
@@ -46,6 +47,8 @@ def main(message):
     print("That means that you are a(n)", user_ranking)#Tell the user what ranking they are.
 
     print("\nThank you for playing, hope you play again!")
+
+    AdventureGame.credits.main()#Send them to the credits section
 
 def death():
     """This function is used by other modules when the user dies. It calls main() with a specific message and changes the user score."""
