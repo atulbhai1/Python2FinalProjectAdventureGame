@@ -46,13 +46,13 @@ You have several paths you can take on this perilous journey.\n""")
     elif user_chosen == "Find an Existing Pie":
         AdventureGame.MurderMysteryPath.findanexistingpieMurder.main()#Go to the murder mystery part of the game
     elif user_chosen == "Ask for help":
-        AdventureGame.LandOfPiPiesPath.askforhelpPiPies.main()
+        AdventureGame.LandOfPiPiesPath.askforhelpPiPies.main()#Go to the land of pi pies part of the game
     elif user_chosen == "Leave The Game(Skip to Credits and Dev. Info)":
         print("Leaving...")
 
         AdventureGame.credits.main()#Show credits
 
-        if input("(Press Enter To End)") == "SECRETBACKDOOR!!!":
+        if input("(Press Enter To End)") == "SECRETBACKDOOR!!!":#If they wanted to get to the secret backdoor
             print("Welcome to this secret area. This is a nice area. Here is a plant I made.")
             print("""
    \|||/
